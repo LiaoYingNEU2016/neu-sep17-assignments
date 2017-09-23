@@ -1,5 +1,5 @@
 package assignment2;
-class employeeSalary{
+class salary{
     public double employeeSalary( double hours){
         double salary;
         salary = 0;
@@ -14,4 +14,4 @@ class employeeSalary{
 
         }return salary;
     }
-    }
+}

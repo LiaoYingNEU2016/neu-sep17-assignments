@@ -1,7 +1,7 @@
 package assignment2;
-class addDigits {
+class Digits {
     public static void main(String[] args) {
-        addDigits test = new addDigits();
+        Digits test = new Digits();
         System.out.println(test.addDigits(1561));
 
     }

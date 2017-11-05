@@ -1,0 +1,168 @@
+1. Find the error in the following code and explain in few lines why it is wrong. (Score 1)
+Here is the code.
+public class Book {
+        int size;
+        int price;
+        String name;
+        public Book(int size){
+            this.size = size;
+        }
+        public Book(int size, int price, String name){
+            //super();  error: the class Book does not extend a superclass;
+            this.size = size;
+            this.price = price;
+            this.name = name;
+        }
+        //public Book(int price){ error: two constructors cannot take the same parameter type
+        public Book(int size, int price){
+            this.size = size;
+            this.price = price;
+
+        }
+        public String setName(String name){
+            return name;
+        }
+    }
+
+
+2. Find the error in the following code and explain in few lines why it is wrong. (Score 1)
+Here is the code.
+public class Clock {
+
+    String time;
+
+        //void getTime(){   error:it is not allowed to have a return value
+        // when the method is defined as void
+    String getTime(){
+            return time;
+        }
+        void setTime(String t){
+            time = t ;
+        }
+}
+
+//3. Write a Java function to remove vowels in a string. (Score 2)
+        //i. The function should take a string as input.
+        //ii. Should return the input string after omitting the vowels.
+        // Here is the prototype you can work with
+
+import java.util.ArrayList;
+
+public class removeVowelFromString {
+    public String removeVowelFromString(String input) {
+        ArrayList<Character> MyString = new ArrayList<>();
+        for (char x : input.toCharArray()) {
+            if (!checkVowels(x)) {
+                MyString.add(x);
+            }
+        }
+        String result = "";
+        for (char x : MyString) {
+            result += String.valueOf(x);
+        }
+
+        return result;
+    }
+    private static boolean checkVowels(char y) {
+        char[] vowels = { 'a', 'e', 'i', 'o', 'u'};
+        for (int i = 0; i < vowels.length; i++) {
+            if (y == vowels[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+//4. Write a java function to check if two strings are Anagrams or not. (Score 2)
+        //i. The function should take two input strings.
+        //ii. Should return a boolean ‘true’ if the inputs are Anagrams else
+        // return ‘false’. Here is the prototype you can work with
+import java.util.Arrays;
+public class checkIfTwoStringsAreAnagrams {
+    public boolean checkIfTwoStringsAreAnagrams(String s1, String s2){
+        if (s1.length() != s2.length() || s1.equals(s2)) {
+            return false;
+        }
+            char[] array1 = s1.toCharArray();
+            char[] array2 = s2.toCharArray();
+            Arrays.sort(array1);
+            Arrays.sort(array2);
+            return Arrays.equals(array1, array2);
+        }
+}
+
+//5. Create a calculator that can perform the following features. (Total Score 4)
+        //i. The calculator should be able to perform Addition, subtraction, multiplication, division. (Score 2)
+//      //ii. Should be able to perform squareRoot, square, cube. (Score 1)
+        //iii. Should be able to convert ‘Fahrenheit-Celsius’ , ‘Feet-Inches’. (Score 1)
+        //Extra Credit(Score 2)
+// The calculator should be able to solve a quadratic equation and return the solution as array.
+        //i. This function should take three arguments.
+        //ii. For example, if quadratic equation is Ax2 + Bx + C. The function should take A,B,C as arguments
+        // and return a solution as array.
+
+
+
+public class Calculator {
+    double addition(double input1, double input2) {
+        return input1 + input2;
+    }
+
+    double subtraction(double input1, double input2) {
+        return input1 - input2;
+    }
+
+    double multiplication(double input1, double input2) {
+        return input1 * input2;
+    }
+
+    double division(double input1, double input2) {
+        return input1 / input2;
+    }
+
+    double squareRoot(double input) {
+        return Math.sqrt(input);
+    }
+
+    double square(double input) {
+        return Math.pow(input, 2);
+    }
+
+    double cube(double input) {
+        return Math.pow(input, 3);
+    }
+
+    double convertFahrenheitToCelsius(double input) {
+        return (input - 32) / 1.8;
+    }
+
+    double convertCelsiusToFahrenheit(double input) {
+        return input * 1.8 + 32;
+    }
+
+    double convertFeetToInches(double input) {
+        return input * 12;
+    }
+
+    double convertInchesToFeet(double input) {
+        return input / 12;
+    }
+
+    public double[] quadraticEquation(double A, double B, double C) {
+
+        double X = B * B - 4 * A * C;
+        double[] results = new double[1];
+        if (X < 0) {
+            return null;
+        } else if (X == 0) {
+            results[0] = -B / (2 * A);
+
+        } else if (X > 0) {
+            results[0] = (-B + Math.sqrt(X)) / (2 * A);
+            results[1] = (-B - Math.sqrt(X)) / (2 * A);
+        }
+        return results;
+    }
+}

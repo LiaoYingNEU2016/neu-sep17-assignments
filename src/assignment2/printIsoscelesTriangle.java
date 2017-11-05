@@ -20,7 +20,6 @@ public class printIsoscelesTriangle {
             System.out.println();
         }
     }
-
 }
 
 

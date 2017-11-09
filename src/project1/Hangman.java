@@ -149,4 +149,4 @@ public class Hangman {
     private void displayWord() {
         System.out.println(String.valueOf(guessLetter));
     }
-}
+} 

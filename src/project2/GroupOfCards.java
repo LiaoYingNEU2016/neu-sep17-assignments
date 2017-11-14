@@ -20,8 +20,8 @@ public class GroupOfCards {
     public Card getCards(int i) {
         return cards[i];
     }
-    void addCard(Card card){
 
+    void addCard(Card card){
         cards[currentSize] = card;
         currentSize++;
     }

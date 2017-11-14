@@ -122,7 +122,7 @@ public class Game {
             System.out.println("player " + i + " score = "+ computePoints(i));
         }
         System.out.println("Play another game (y/n)?");
-        System.out.println("***  THAT IS THE END OF GAME  ***");
+        System.out.println("***  THIS IS THE END OF GAME  ***");
     }
 
 
